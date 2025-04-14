@@ -8,23 +8,22 @@
 </head>
 <body>
   <header>
-    <div class="menu-toggle" id="mobile-menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
+    <div class="container">
+      <h1>🏍️ Motor Brotherhood</h1>
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <nav id="navbar">
+        <a href="index.html">Home</a>
+        <a href="members.html">Anggota</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+        <a href="profile.html">Profil</a>
+      </nav>
     </div>
-    <nav class="navbar">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
   </header>
-
-  <script src="script.js"></script>
-  
 
   <section class="hero">
     <div class="hero-text">
@@ -40,13 +39,21 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
-  <script>document.addEventListener("keydown", function(e) {
-    if (e.key === "PrintScreen" || (e.ctrlKey && e.key === "s")) {
-      e.preventDefault(); // Cegah screenshot
-      alert("Screenshot tidak diizinkan!");
-    }
-  });
+  <script>
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "PrintScreen" || (e.ctrlKey && e.key === "s")) {
+        e.preventDefault(); // Cegah screenshot
+        alert("Screenshot tidak diizinkan!");
+      }
+    });
+
+    // Toggle the navigation menu on mobile
+    const mobileMenu = document.getElementById("mobile-menu");
+    const navbar = document.getElementById("navbar");
+
+    mobileMenu.addEventListener("click", () => {
+      navbar.classList.toggle("active");
+    });
   </script>
 </body>
 </html>

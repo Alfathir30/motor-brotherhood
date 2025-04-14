@@ -1,86 +1,8 @@
-/* Umum */
-/* Reset default styling */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
+  margin: 0;
   font-family: 'Segoe UI', sans-serif;
-}
-
-header {
-  background-color: #333;
-  color: white;
-  padding: 10px 0;
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.navbar ul li {
-  margin: 0 15px;
-}
-
-.navbar ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.menu-toggle {
-  display: none;
-  cursor: pointer;
-  flex-direction: column;
-  width: 30px;
-  height: 25px;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.bar {
-  width: 25px;
-  height: 4px;
-  background-color: white;
-}
-
-/* Responsive: Menampilkan garis 3 hanya di perangkat mobile */
-@media (max-width: 768px) {
-  .navbar {
-    display: none;
-    width: 100%;
-  }
-
-  .navbar.active {
-    display: block;
-    background-color: #333;
-    position: absolute;
-    top: 50px;
-    right: 0;
-    left: 0;
-    padding: 10px;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-
-  .navbar ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .navbar ul li {
-    margin: 10px 0;
-  }
-
-  .navbar ul li a {
-    font-size: 1.5em;
-  }
+  background: linear-gradient(135deg, #121212, #1a1a1a); /* Gradient added here */
+  color: #f0f0f0;
 }
 
 .container {
@@ -89,8 +11,11 @@ header {
   padding: 0 20px;
 }
 
-/* Header */
-/* Style for the header */
+header {
+  background-color: #ff3c00;
+  padding: 20px 0;
+  text-align: center;
+}
 
 header h1 {
   margin: 0;
@@ -112,94 +37,6 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Hero Section */
-.hero {
-  background: url('motor2.jpg') no-repeat center center/cover;
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: cover; /* Memastikan gambar terisi penuh tanpa terpotong */
-  background-position: center; /* Memastikan gambar selalu di tengah */
-}
-
-.hero-text {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 30px;
-  text-align: center;
-  border-radius: 15px;
-}
-
-.hero-text h2 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-}
-
-.hero-text .btn {
-  background: #ff3c00;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.hero-text .btn:hover {
-  background: #e63300;
-}
-
-/* Footer */
-footer {
-  background: linear-gradient(135deg, #232526, #414345); /* Gradasi footer */
-  text-align: center;
-  padding: 10px;
-  font-size: 0.9em;
-  margin-top: 30px;
-}
-
-/* Form */
-.form-container {
-  max-width: 400px;
-  margin: 40px auto;
-  background: #1e1e1e;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px #ff3c00;
-}
-
-.form-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-input[type="text"], input[type="password"], input[type="email"] {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 5px;
-  background: #2a2a2a;
-  color: white;
-}
-
-button {
-  width: 100%;
-  padding: 10px;
-  background: #ff3c00;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-button:hover {
-  background: #e63300;
-}
-
-/* Member Cards */
 .members-container {
   display: flex;
   flex-wrap: wrap;
@@ -209,12 +46,18 @@ button:hover {
 }
 
 .member-card {
-  background: linear-gradient(145deg, #1e1e1e, #2c2c2c); /* Gradasi card anggota */
+  background: #1e1e1e;
   padding: 20px;
   border-radius: 15px;
   width: 200px;
   text-align: center;
   box-shadow: 0 0 10px #ff3c00;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.member-card:hover {
+  transform: scale(1.05);
 }
 
 .member-card img {
@@ -233,60 +76,33 @@ button:hover {
   color: #ccc;
 }
 
-/* Responsif untuk tampilan di HP */
-@media screen and (max-width: 768px) {
-  header h1 {
-    font-size: 2em;
-  }
-
-  .hero-text h2 {
-    font-size: 2em;
-  }
-
-  .form-container {
-    max-width: 90%;
-  }
-
-  .member-card {
-    width: 150px;
-  }
-
-  nav a {
-    display: block;
-    margin: 10px 0;
-  }
-
-  .hero {
-    height: 60vh;
-  }
-
-  .hero-text .btn {
-    padding: 8px 16px;
-    font-size: 1em;
-  }
+/* ==== Profile Section ==== */
+.profile-container {
+  padding: 40px;
+  background: #181818;
 }
 
-/* Responsif untuk tampilan lebih kecil (mobile) */
-@media screen and (max-width: 480px) {
-  header h1 {
-    font-size: 1.8em;
-  }
+.profile-card {
+  display: none;
+  background: #2a2a2a;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #ff3c00;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  color: white;
+  text-align: center;
+}
 
-  .hero-text h2 {
-    font-size: 1.8em;
-  }
+.profile-card h2 {
+  margin-bottom: 10px;
+  color: #ff3c00;
+}
 
-  .form-container {
-    max-width: 100%;
-    padding: 15px;
-  }
-
-  .member-card {
-    width: 120px;
-  }
-
-  .hero-text .btn {
-    padding: 8px 16px;
-    font-size: 0.9em;
-  }
+footer {
+  background-color: #1a1a1a;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9em;
+  margin-top: 30px;
 }
