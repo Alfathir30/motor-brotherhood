@@ -1,9 +1,86 @@
 /* Umum */
-body {
+/* Reset default styling */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #121212;
-  color: #f0f0f0;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar ul li {
+  margin: 0 15px;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  width: 30px;
+  height: 25px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bar {
+  width: 25px;
+  height: 4px;
+  background-color: white;
+}
+
+/* Responsive: Menampilkan garis 3 hanya di perangkat mobile */
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+    width: 100%;
+  }
+
+  .navbar.active {
+    display: block;
+    background-color: #333;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    left: 0;
+    padding: 10px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar ul li {
+    margin: 10px 0;
+  }
+
+  .navbar ul li a {
+    font-size: 1.5em;
+  }
 }
 
 .container {
@@ -14,69 +91,6 @@ body {
 
 /* Header */
 /* Style for the header */
-header {
-  background-color: #ff3c00;
-  padding: 20px 0;
-  text-align: center;
-  position: relative; /* Agar hamburger bisa di posisi yang tepat */
-}
-
-/* Membuat menu navigasi standar */
-nav {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-}
-
-/* Style untuk link navigasi */
-nav a {
-  margin: 0 10px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* Mengubah link saat hover */
-nav a:hover {
-  text-decoration: underline;
-}
-
-/* Style untuk hamburger icon */
-.hamburger {
-  display: none; /* Tersembunyi di layar besar */
-  font-size: 30px;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-}
-
-/* Responsif untuk perangkat kecil */
-@media screen and (max-width: 768px) {
-  nav {
-    display: none; /* Sembunyikan menu navigasi di perangkat kecil */
-    flex-direction: column;
-    width: 100%;
-    background-color: #ff3c00;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    padding: 10px;
-  }
-
-  nav a {
-    margin: 10px 0;
-  }
-
-  .hamburger {
-    display: block; /* Menampilkan ikon hamburger */
-  }
-
-  nav.active {
-    display: flex; /* Menampilkan menu saat hamburger di-click */
-  }
-}
-
 
 header h1 {
   margin: 0;
