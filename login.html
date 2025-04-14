@@ -1,40 +1,38 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>🏍️ Motor Brotherhood</h1>
-      <div class="menu-toggle" id="menuToggle">☰</div>
-      <nav id="navbar">
-        <a href="index.html">Home</a>
-        <a href="members.html">Anggota</a>
-        <a href="login.html">Login</a>
-        <a href="register.html">Register</a>
-        <a href="profile.html">Profil</a>
-      </nav>
-    </div>
-  </header>
-  <div class="form-container">
-    <h2>Login</h2>
-    <form>
-      <input type="text" placeholder="Username" required/>
-      <input type="password" placeholder="Password" required/>
-      <button type="submit">Masuk</button>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="login.html">Login</a>
+    <a href="register.html">Register</a>
+  </nav>
+
+  <!-- Login Form -->
+  <section class="auth-container">
+    <form class="auth-form" action="/login" method="POST">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit">Login</button>
+
+      <p>Belum punya akun? <a href="register.html">Daftar disini</a></p>
     </form>
-  </div>
-  <script>document.addEventListener("keydown", function(e) {
-    if (e.key === "PrintScreen" || (e.ctrlKey && e.key === "s")) {
-      e.preventDefault(); // Cegah screenshot
-      alert("Screenshot tidak diizinkan!");
-    }
-  });
-  </script>
-  <script src="script.js"></script>
+  </section>
+
+  <footer>
+    &copy; 2025 Motor Brotherhood. All rights reserved.
+  </footer>
+
 </body>
 </html>
