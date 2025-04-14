@@ -4,59 +4,46 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Motor Brotherhood</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <header>
-    <div class="container">
-      <h1>🏍️ Motor Brotherhood</h1>
-      <div class="menu-toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
-      <nav class="navbar">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="members.html">Anggota</a></li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="register.html">Register</a></li>
-          <li><a href="profile.html">Profil</a></li>
-        </ul>
-      </nav>
-      
+    <h1>Motor Brotherhood</h1>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
+    <nav class="navbar" id="navbar">
+      <ul>
+        <li><a href="#">Beranda</a></li>
+        <li><a href="#">Tentang</a></li>
+        <li><a href="#">Galeri</a></li>
+        <li><a href="#">Kontak</a></li>
+      </ul>
+    </nav>
   </header>
 
   <section class="hero">
     <div class="hero-text">
-      <h2>Selamat Datang, Bro!</h2>
-      <p>Gabung dan rasakan brotherhood sesungguhnya.</p>
-      <a href="register.html" class="btn">Daftar Sekarang</a>
+      <h2>Selamat Datang di Komunitas Kami!</h2>
+      <a href="#" class="btn">Gabung Sekarang</a>
     </div>
   </section>
 
   <footer>
-    <div class="container">
-      <p>© 2025 Motor Brotherhood | Marvel & Team</p>
-    </div>
+    <p>&copy; 2025 Motor Brotherhood. All rights reserved.</p>
   </footer>
 
   <script>
-    document.addEventListener("keydown", function(e) {
-      if (e.key === "PrintScreen" || (e.ctrlKey && e.key === "s")) {
-        e.preventDefault(); // Cegah screenshot
-        alert("Screenshot tidak diizinkan!");
-      }
-    });
-
-    // Toggle the navigation menu on mobile
-    const mobileMenu = document.getElementById("mobile-menu");
+    const menuToggle = document.getElementById("menu-toggle");
     const navbar = document.getElementById("navbar");
 
-    mobileMenu.addEventListener("click", () => {
+    menuToggle.addEventListener("click", () => {
       navbar.classList.toggle("active");
     });
   </script>
+
 </body>
 </html>
