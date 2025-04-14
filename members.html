@@ -4,23 +4,132 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Motor Brotherhood</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    header {
+      background: linear-gradient(90deg, #6200ff, #bf00ff);
+      padding: 20px 0;
+      text-align: center;
+    }
+    
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    
+    nav {
+      margin-top: 10px;
+    }
+    
+    nav a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    
+    nav a:hover {
+      text-decoration: underline;
+    }
+    
+    .members-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 40px;
+    }
+    
+    .member-card {
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 15px;
+      width: 200px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(51, 0, 255, 0.5), 0 0 30px rgba(55, 0, 255, 0.5), 0 0 50px rgba(255, 0, 225, 0.5);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    
+    .member-card:hover {
+      transform: scale(1.05);
+    }
+    
+    .member-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    
+    .member-card h3 {
+      margin: 10px 0 5px;
+    }
+    
+    .member-card p {
+      font-size: 0.9em;
+      color: #ccc;
+    }
+    
+    /* ==== Profile Section ==== */
+    .profile-container {
+      padding: 40px;
+      background: #181818;
+    }
+    
+    .profile-card {
+      display: none;
+      background: #2a2a2a;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(51, 0, 255, 0.5), 0 0 30px rgba(55, 0, 255, 0.5), 0 0 50px rgba(255, 0, 225, 0.5);
+      max-width: 600px;
+      margin: 0 auto 30px;
+      color: white;
+      text-align: center;
+    }
+    
+    .profile-card h2 {
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+    
+    footer {
+      background-color: #1a1a1a;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9em;
+      margin-top: 30px;
+    }
+    </style>
+    
 </head>
 <body>
   <header>
     <div class="container">
       <h1>🏍️ Motor Brotherhood</h1>
-      <div class="menu-toggle" id="menuToggle">☰</div>
-      <nav id="navbar">
+      <nav>
         <a href="index.html">Home</a>
         <a href="members.html">Anggota</a>
         <a href="login.html">Login</a>
         <a href="register.html">Register</a>
-        <a href="profile.html">Profil</a>
       </nav>
     </div>
   </header>
-  <sectr">
+
+  <section class="members-container">
     <div class="member-card" onclick="showProfile('alif')">
       <img src="marvel.jpg" alt="Alif Marvel" draggable="false">
       <h3>Alif Marvel</h3>
@@ -33,7 +142,7 @@
     </div>
     <div class="member-card" onclick="showProfile('rofi')">
       <img src="rofi.jpg" alt="Rofi Rijal" draggable="false">
-      <h3>Rofi Rijal Sani</h3>
+      <h3>Rofi Rijal Shani</h3>
       <p></p>
     </div>
     <div class="member-card" onclick="showProfile('fakhri')">
@@ -43,7 +152,7 @@
     </div>
   </section>
 
-  <secion class="members-containetion class="profile-container" id="profile">
+  <section class="profile-container" id="profile">
     <div class="profile-card" id="alif">
       <h2>Alif Marvel</h2>
       <p>Hobi nonton film, ngoding, dan ngemil ramen 🍜</p>
@@ -53,7 +162,7 @@
       <p></p>
     </div>
     <div class="profile-card" id="rofi">
-      <h2>Rofi Rijal Sani</h2>
+      <h2>Rofi Rijal Shani</h2>
       <p></p>
     </div>
     <div class="profile-card" id="fakhri">
@@ -93,17 +202,12 @@
     document.addEventListener('contextmenu', function(e) {
       if (e.target.tagName === 'IMG') {
         e.preventDefault(); // Disable klik kanan
-        alert('ngapain? kg boleh di download!');
+        alert('Gambar ini tidak bisa di-download!');
       }
     });
-    const menuToggle = document.getElementById("menuToggle");
-    const navbar = document.getElementById("navbar");
-
-    menuToggle.addEventListener("click", () => {
-      navbar.classList.toggle("show");
-    });
   </script>
-  <script src="script.js"></script>
+
 </body>
 </html>
 
+<!-- ===== style.css ===== -->

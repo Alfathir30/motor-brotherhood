@@ -12,14 +12,15 @@ body {
 }
 
 header {
-  background: linear-gradient(90deg, #ff3c00, #ff6f00);
-  padding: 15px 0;
+  background: linear-gradient(90deg, #6200ff, #bf00ff);
+  padding: 25px 0; /* Tinggi header diperbesar */
   text-align: center;
+  margin-bottom: 20px; /* Agar tidak berdekatan dengan navbar */
 }
 
 header h1 {
   margin: 0;
-  font-size: 2em;
+  font-size: 2.5em; /* Ukuran font lebih besar */
   color: white;
 }
 
@@ -37,17 +38,17 @@ nav {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin-top: 10px;
   list-style: none;
-  padding: 0;
-  background: #ff3c00;
+  padding: 15px 0;
+  background: #ff3c0000;
+  border-radius: 5px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  padding: 8px 12px;
+  padding: 12px 18px; /* Padding ditambah agar lebih besar */
   border-radius: 5px;
   transition: background 0.3s;
 }
@@ -184,13 +185,13 @@ footer {
   background: #1e1e1e;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 15px #ff3c00;
+  box-shadow: 0 0 10px rgba(51, 0, 255, 0.5), 0 0 30px rgba(55, 0, 255, 0.5), 0 0 50px rgba(255, 0, 225, 0.5);
 }
 
 .form-container h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #ff3c00;
+  color: #ffffff;
 }
 
 input[type="text"], input[type="password"], input[type="email"] {
