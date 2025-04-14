@@ -182,10 +182,9 @@ footer {
   max-width: 400px;
   margin: 40px auto;
   background: #1e1e1e;
-  padding: 30px;
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 15px #ff3c00;
-  border: 1px solid #ff6f00;  /* Border untuk efek kartu */
 }
 
 .form-container h2 {
@@ -218,4 +217,43 @@ button {
 
 button:hover {
   background: #e63300;
+}
+
+.members-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 40px;
+}
+
+.member-card {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 15px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 0 10px #ff3c00;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.member-card:hover {
+  transform: scale(1.05);
+}
+
+.member-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.member-card h3 {
+  margin: 10px 0 5px;
+}
+
+.member-card p {
+  font-size: 0.9em;
+  color: #ccc;
 }

@@ -20,10 +20,7 @@
       </nav>
     </div>
   </header>
-
-  <script src="script.js"></script>
-
-  <section class="members-container">
+  <sectr">
     <div class="member-card" onclick="showProfile('alif')">
       <img src="marvel.jpg" alt="Alif Marvel" draggable="false">
       <h3>Alif Marvel</h3>
@@ -46,7 +43,7 @@
     </div>
   </section>
 
-  <section class="profile-container" id="profile">
+  <secion class="members-containetion class="profile-container" id="profile">
     <div class="profile-card" id="alif">
       <h2>Alif Marvel</h2>
       <p>Hobi nonton film, ngoding, dan ngemil ramen 🍜</p>
@@ -96,8 +93,14 @@
     document.addEventListener('contextmenu', function(e) {
       if (e.target.tagName === 'IMG') {
         e.preventDefault(); // Disable klik kanan
-        alert('Gambar ini tidak bisa di-download!');
+        alert('ngapain? kg boleh di download!');
       }
+    });
+    const menuToggle = document.getElementById("menuToggle");
+    const navbar = document.getElementById("navbar");
+
+    menuToggle.addEventListener("click", () => {
+      navbar.classList.toggle("show");
     });
   </script>
   <script src="script.js"></script>
