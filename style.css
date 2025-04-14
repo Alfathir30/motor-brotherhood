@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #121212, #1a1a1a);
+  background-color: #121212;
   color: #f0f0f0;
 }
 
@@ -12,7 +12,7 @@ body {
 }
 
 header {
-  background-color: #ff3c00;
+  background: linear-gradient(90deg, #ff3c00, #ff5e00);
   padding: 20px 0;
   text-align: center;
   position: relative;
@@ -23,66 +23,130 @@ header h1 {
   font-size: 2.5em;
 }
 
-nav {
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
   margin-top: 10px;
 }
 
-nav ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
+.navbar ul li {
+  margin: 0 10px;
 }
 
-nav a {
-  margin: 0 10px;
+.navbar ul li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
 }
 
-nav a:hover {
+.navbar ul li a:hover {
   text-decoration: underline;
 }
 
-.menu-toggle {
-  display: none;
-  flex-direction: column;
+.hero {
+  background: url('motor2.jpg') no-repeat center center/cover;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-text {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.hero-text h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.hero-text .btn {
+  background: #ff3c00;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.hero-text .btn:hover {
+  background: #e63300;
+}
+
+footer {
+  background-color: #1a1a1a;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9em;
+  margin-top: 30px;
+}
+
+/* === Member Card === */
+.members-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 40px;
+}
+
+.member-card {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 15px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 0 10px #ff3c00;
   cursor: pointer;
-  position: absolute;
-  right: 20px;
-  top: 20px;
+  transition: transform 0.3s ease;
 }
 
-.menu-toggle .bar {
-  width: 30px;
-  height: 4px;
-  background-color: white;
-  margin: 5px 0;
+.member-card:hover {
+  transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    display: none; /* Hide the navbar links by default */
-    width: 100%;
-    text-align: center;
-  }
-
-  .navbar.active {
-    display: block; /* Show navbar when active */
-  }
-
-  .menu-toggle {
-    display: flex; /* Show the hamburger icon */
-  }
-
-  .navbar a {
-    display: block;
-    margin: 15px 0;
-  }
+.member-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
 }
 
-/* ==== Profile Section ==== */
+.member-card h3 {
+  margin: 10px 0 5px;
+}
+
+.member-card p {
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+/* === Profile === */
 .profile-container {
   padding: 40px;
   background: #181818;
@@ -105,10 +169,25 @@ nav a:hover {
   color: #ff3c00;
 }
 
-footer {
-  background-color: #1a1a1a;
-  text-align: center;
-  padding: 10px;
-  font-size: 0.9em;
-  margin-top: 30px;
+/* === Responsive Navbar === */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    display: none;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .navbar.active ul {
+    display: flex;
+  }
+
+  .navbar ul li {
+    margin: 10px 0;
+  }
 }
