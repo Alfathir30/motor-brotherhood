@@ -20,6 +20,7 @@ header {
 header h1 {
   margin: 0;
   font-size: 2em;
+  color: white;
 }
 
 .menu-toggle {
@@ -39,6 +40,7 @@ nav {
   margin-top: 10px;
   list-style: none;
   padding: 0;
+  background: #ff3c00;
 }
 
 nav a {
@@ -188,6 +190,7 @@ footer {
 .form-container h2 {
   text-align: center;
   margin-bottom: 20px;
+  color: #ff3c00;
 }
 
 input[type="text"], input[type="password"], input[type="email"] {
