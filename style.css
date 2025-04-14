@@ -13,11 +13,70 @@ body {
 }
 
 /* Header */
+/* Style for the header */
 header {
-  background: linear-gradient(45deg, #ff512f, #dd2476); /* Gradasi merah */
+  background-color: #ff3c00;
   padding: 20px 0;
   text-align: center;
+  position: relative; /* Agar hamburger bisa di posisi yang tepat */
 }
+
+/* Membuat menu navigasi standar */
+nav {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Style untuk link navigasi */
+nav a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Mengubah link saat hover */
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Style untuk hamburger icon */
+.hamburger {
+  display: none; /* Tersembunyi di layar besar */
+  font-size: 30px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+/* Responsif untuk perangkat kecil */
+@media screen and (max-width: 768px) {
+  nav {
+    display: none; /* Sembunyikan menu navigasi di perangkat kecil */
+    flex-direction: column;
+    width: 100%;
+    background-color: #ff3c00;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px;
+  }
+
+  nav a {
+    margin: 10px 0;
+  }
+
+  .hamburger {
+    display: block; /* Menampilkan ikon hamburger */
+  }
+
+  nav.active {
+    display: flex; /* Menampilkan menu saat hamburger di-click */
+  }
+}
+
 
 header h1 {
   margin: 0;
