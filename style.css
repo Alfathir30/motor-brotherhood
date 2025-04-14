@@ -1,131 +1,97 @@
+/* ===== Global Styles ===== */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #121212;
-  color: #f0f0f0;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
 }
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+
+/* ===== Header ===== */
 header {
-  background-color: #ff3c00;
+  background: linear-gradient(to right, #ff512f, #dd2476);
   padding: 20px 0;
   text-align: center;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
+
 header h1 {
   margin: 0;
-  font-size: 2.5em;
 }
-nav {
-  margin-top: 10px;
-}
+
 nav a {
-  margin: 0 10px;
   color: white;
+  margin: 0 15px;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s;
 }
+
 nav a:hover {
-  text-decoration: underline;
+  color: #ffd700;
 }
-.hero {
-  background: url('motor2.jpg') no-repeat center center/cover;
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.hero-text {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 30px;
-  text-align: center;
-  border-radius: 15px;
-}
-.hero-text h2 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-}
-.hero-text .btn {
-  background: #ff3c00;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-.hero-text .btn:hover {
-  background: #e63300;
-}
-footer {
-  background-color: #1a1a1a;
-  text-align: center;
-  padding: 10px;
-  font-size: 0.9em;
-  margin-top: 30px;
-}
-.form-container {
-  max-width: 400px;
-  margin: 40px auto;
-  background: #1e1e1e;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px #ff3c00;
-}
-.form-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-input[type="text"], input[type="password"], input[type="email"] {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 5px;
-  background: #2a2a2a;
-  color: white;
-}
-button {
-  width: 100%;
-  padding: 10px;
-  background: #ff3c00;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-button:hover {
-  background: #e63300;
-}
+
+/* ===== Anggota Section ===== */
 .members-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
-  padding: 40px;
+  gap: 30px;
+  padding: 40px 20px;
+  background: linear-gradient(to bottom, #1a1a1a, #111);
 }
+
 .member-card {
-  background: #1e1e1e;
-  padding: 20px;
+  background: linear-gradient(145deg, #1e1e1e, #2c2c2c);
   border-radius: 15px;
-  width: 200px;
+  padding: 20px;
   text-align: center;
-  box-shadow: 0 0 10px #ff3c00;
+  width: 200px;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+  border: 2px solid #ff3c00;
 }
+
+.member-card:hover {
+  transform: scale(1.05);
+  background: linear-gradient(145deg, #ff3c00, #ff7e5f);
+}
+
 .member-card img {
   width: 100px;
   height: 100px;
+  object-fit: cover;
   border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+/* ===== Profile Section ===== */
+.profile-container {
+  padding: 40px;
+  background: #181818;
+}
+
+.profile-card {
+  display: none;
+  background: linear-gradient(145deg, #2a2a2a, #1f1f1f);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #ff3c00;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  color: white;
+  text-align: center;
+}
+
+.profile-card h2 {
   margin-bottom: 10px;
+  color: #ff3c00;
 }
-.member-card h3 {
-  margin: 10px 0 5px;
-}
-.member-card p {
-  font-size: 0.9em;
-  color: #ccc;
+
+/* ===== Footer ===== */
+footer {
+  background: linear-gradient(to right, #232526, #414345);
+  text-align: center;
+  padding: 15px 0;
+  color: #fff;
 }
