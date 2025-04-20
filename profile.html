@@ -1,37 +1,37 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profil</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <div class="container">
+    <div class="asep">
       <h1>🏍️ Motor Brotherhood</h1>
-      <div class="menu-toggle" id="menuToggle">☰</div>
-      <nav id="navbar">
-        <a href="index.html">Home</a>
-        <a href="members.html">Anggota</a>
-        <a href="login.html">Login</a>
-        <a href="register.html">Register</a>
-        <a href="profile.html">Profil</a>
+      <nav>
+        <button id="menu" class="menu" style="color: white;">☰</button>
+        <nav id="navbar" class="navbar">
+          <ul>
+            <a href="index.html">Home</a>
+            <a href="members.html">Anggota</a>
+            <a href="profile.html">Profil</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+          </ul>
+        </nav>
       </nav>
     </div>
   </header>
+  
+  <section class="container">
+    <div class="form-card" id="profilBox">
+      <h2>Profil Anggota</h2>
+      <p>Pilih anggota dulu dari halaman <a href="members.html">Anggota</a>.</p>
+    </div>
+  </section>
 
-  <script>
-    const menuToggle = document.getElementById("menuToggle");
-    const navbar = document.getElementById("navbar");
-
-    menuToggle.addEventListener("click", () => {
-      navbar.classList.toggle("show");
-    });
-  </script>
-  <div class="form-container">
-    <h2>pergii ke <a href="members.html">Anggota</a> dan klik salah satu untuk melihat profil</h2>
-  </div>
   <script src="script.js"></script>
 </body>
 </html>

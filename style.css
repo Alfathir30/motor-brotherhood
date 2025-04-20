@@ -1,79 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #121212;
-  color: #f0f0f0;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-header {
-  background: linear-gradient(90deg, #6200ff, #bf00ff);
-  padding: 25px 0; /* Tinggi header diperbesar */
-  text-align: center;
-  margin-bottom: 20px; /* Agar tidak berdekatan dengan navbar */
-}
-
-header h1 {
-  margin: 0;
-  font-size: 2.5em; /* Ukuran font lebih besar */
-  color: white;
-}
-
-.menu-toggle {
-  display: none;
-  font-size: 1.8em;
-  cursor: pointer;
-  color: white;
-  margin-top: 10px;
+  background: #111;
+  color: #fff;
+  animation: fadeBody 1.2s ease;
 }
 
 nav {
   display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background: linear-gradient(90deg, #6200ff, #bf00ff);
+  padding: 20px 0;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  list-style: none;
-  padding: 15px 0;
-  background: #ff3c0000;
-  border-radius: 5px;
 }
 
 nav a {
-  color: white;
+  color: #fff;
+  margin: 0 10px;
   text-decoration: none;
+}
+
+nav .logo {
   font-weight: bold;
-  padding: 12px 18px; /* Padding ditambah agar lebih besar */
-  border-radius: 5px;
-  transition: background 0.3s;
+  font-size: 1.2rem;
 }
 
-nav a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-@media (max-width: 768px) {
-  nav {
-    display: none;
-    flex-direction: column;
-    background: #ff3c00;
-    padding: 15px;
-    border-radius: 10px;
-    margin-top: 10px;
-  }
-
-  nav.show {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
+footer {
+  background: linear-gradient(90deg, #6200ff, #bf00ff);
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9em;
+  margin-top: 30px;
 }
 
 .hero {
@@ -82,21 +45,19 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .hero-text {
   background: rgba(0, 0, 0, 0.6);
-  padding: 30px;
+  padding: 40px;
   text-align: center;
   border-radius: 15px;
 }
 
-.hero-text h2 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-}
-
-.hero-text .btn {
+.btn {
   background: #ff3c00;
   color: white;
   padding: 10px 20px;
@@ -104,157 +65,255 @@ nav a:hover {
   text-decoration: none;
   font-weight: bold;
   transition: background 0.3s ease;
+  display: inline-block;
 }
-
-.hero-text .btn:hover {
-  background: #e63300;
-}
-
-.members-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  padding: 40px;
-}
-
-.member-card {
+/*=======kartu member======*/
+.card {
   background: #1e1e1e;
   padding: 20px;
   border-radius: 15px;
   width: 200px;
   text-align: center;
-  box-shadow: 0 0 10px #ff3c00;
+  box-shadow: 0 0 10px rgba(51, 0, 255, 0.5), 0 0 30px rgba(55, 0, 255, 0.5), 0 0 50px rgba(255, 0, 225, 0.5);
   cursor: pointer;
   transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.member-card:hover {
+.card::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  background: linear-gradient(90deg, rgba(0, 255, 255, 0.6), rgba(255, 0, 255, 0.6));
+  filter: blur(10px);
+  border-radius: 10px;
+  opacity: 0.9;
+}
+
+.card:hover {
   transform: scale(1.05);
 }
 
-.member-card img {
+.card img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   margin-bottom: 10px;
 }
 
-.member-card h3 {
+.card h3 {
   margin: 10px 0 5px;
 }
 
-.member-card p {
+.card p {
   font-size: 0.9em;
   color: #ccc;
 }
-
-.profile-container {
-  padding: 40px;
-  background: #181818;
-}
-
-.profile-card {
-  display: none;
-  background: #2a2a2a;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 0 10px #ff3c00;
-  max-width: 600px;
-  margin: 0 auto 30px;
-  color: white;
-  text-align: center;
-}
-
-.profile-card h2 {
-  margin-bottom: 10px;
-  color: #ff3c00;
-}
-
-footer {
-  background-color: #1a1a1a;
-  text-align: center;
-  padding: 10px;
-  font-size: 0.9em;
-  margin-top: 30px;
-}
-
-.form-container {
+/*====kartu login regis====*/
+.form-card {
   max-width: 400px;
   margin: 40px auto;
   background: #1e1e1e;
-  padding: 20px;
+  padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(51, 0, 255, 0.5), 0 0 30px rgba(55, 0, 255, 0.5), 0 0 50px rgba(255, 0, 225, 0.5);
+  box-shadow: 0 0 15px #ff3c00;
+  border: 1px solid #ff6f00;
 }
 
-.form-container h2 {
+.form-card h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #ffffff;
+  color: #ff3c00;
 }
 
-input[type="text"], input[type="password"], input[type="email"] {
+.form-card input {
   width: 100%;
-  padding: 10px;
-  margin: 10px 0;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
   border: none;
   border-radius: 5px;
-  background: #2a2a2a;
-  color: white;
 }
 
-button {
+.form-card button {
   width: 100%;
-  padding: 10px;
-  background: #ff3c00;
+  padding: 0.5rem;
   border: none;
   border-radius: 5px;
-  color: white;
+  background: #e91e63;
+  color: #fff;
   font-weight: bold;
+}
+
+.asep {
+  background: linear-gradient(90deg, #6200ff, #bf00ff);
+}
+
+.asep h1{
+  display: flex;
+  justify-content: center;
+}
+
+/* Navbar Default */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+}
+
+.navbar ul a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+/* Tombol hamburger (sembunyi dulu di PC) */
+.menu {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
   cursor: pointer;
-  transition: background 0.3s;
 }
 
-button:hover {
-  background: #e63300;
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .menu {
+    display: block;
+  }
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+    background: linear-gradient(90deg, #6200ff, #bf00ff);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    z-index: 99;
+  }
+
+  .navbar.show {
+    display: flex;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
-.members-container {
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Animation */
+.fade-in .btn {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeBody {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card,
+.form-card,
+nav,
+.container h1 {
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* ======= BAGIAN TAMBAHAN UNTUK ANGGOTA.HTML ======= */
+.container {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.cardd {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  padding: 40px;
 }
 
-.member-card {
-  background: #1e1e1e;
-  padding: 20px;
-  border-radius: 15px;
-  width: 200px;
+.cardd .card {
+  width: 180px;
+  padding: 1rem;
+  background: #333;
+  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 0 10px #ff3c00;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
 }
 
-.member-card:hover {
+.cardd .card:hover {
   transform: scale(1.05);
 }
 
-.member-card img {
+.cardd .card img {
   width: 100px;
   height: 100px;
+  object-fit: cover;
   border-radius: 50%;
   margin-bottom: 10px;
 }
 
-.member-card h3 {
-  margin: 10px 0 5px;
+.cardd .card h3 {
+  margin: 0.5rem 0 0.2rem;
+  font-size: 1rem;
 }
 
-.member-card p {
-  font-size: 0.9em;
-  color: #ccc;
+.cardd .card p {
+  font-size: 0.9rem;
+  color: #aaa;
 }
+
+#profilBox {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(51, 0, 255, 0.5), 0 0 30px rgba(55, 0, 255, 0.5), 0 0 50px rgba(255, 0, 225, 0.5);
+  color: #fff;
+  margin: 30px auto;
+  max-width: 500px;
+}
+
+#profilBox h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+#profilBox p {
+  margin: 10px 0;
+}
+/* ======= SELESAI ANGGOTA.HTML ======= */

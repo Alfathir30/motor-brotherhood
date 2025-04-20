@@ -1,213 +1,55 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Motor Brotherhood</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #121212;
-      color: #f0f0f0;
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    
-    header {
-      background: linear-gradient(90deg, #6200ff, #bf00ff);
-      padding: 20px 0;
-      text-align: center;
-    }
-    
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-    
-    nav {
-      margin-top: 10px;
-    }
-    
-    nav a {
-      margin: 0 10px;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    
-    nav a:hover {
-      text-decoration: underline;
-    }
-    
-    .members-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      padding: 40px;
-    }
-    
-    .member-card {
-      background: #1e1e1e;
-      padding: 20px;
-      border-radius: 15px;
-      width: 200px;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(51, 0, 255, 0.5), 0 0 30px rgba(55, 0, 255, 0.5), 0 0 50px rgba(255, 0, 225, 0.5);
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-    
-    .member-card:hover {
-      transform: scale(1.05);
-    }
-    
-    .member-card img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      margin-bottom: 10px;
-    }
-    
-    .member-card h3 {
-      margin: 10px 0 5px;
-    }
-    
-    .member-card p {
-      font-size: 0.9em;
-      color: #ccc;
-    }
-    
-    /* ==== Profile Section ==== */
-    .profile-container {
-      padding: 40px;
-      background: #181818;
-    }
-    
-    .profile-card {
-      display: none;
-      background: #2a2a2a;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 0 10px rgba(51, 0, 255, 0.5), 0 0 30px rgba(55, 0, 255, 0.5), 0 0 50px rgba(255, 0, 225, 0.5);
-      max-width: 600px;
-      margin: 0 auto 30px;
-      color: white;
-      text-align: center;
-    }
-    
-    .profile-card h2 {
-      margin-bottom: 10px;
-      color: #ffffff;
-    }
-    
-    footer {
-      background-color: #1a1a1a;
-      text-align: center;
-      padding: 10px;
-      font-size: 0.9em;
-      margin-top: 30px;
-    }
-    </style>
-    
+  <title>Anggota</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <div class="container">
+    <div class="asep">
       <h1>🏍️ Motor Brotherhood</h1>
       <nav>
-        <a href="index.html">Home</a>
-        <a href="members.html">Anggota</a>
-        <a href="login.html">Login</a>
-        <a href="register.html">Register</a>
+        <button id="menu" class="menu" style="color: white;">☰</button>
+        <nav id="navbar" class="navbar">
+          <ul>
+            <a href="index.html">Home</a>
+            <a href="anggota.html">Anggota</a>
+            <a href="profil.html">Profil</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+          </ul>
+        </nav>
       </nav>
     </div>
   </header>
 
-  <section class="members-container">
-    <div class="member-card" onclick="showProfile('alif')">
-      <img src="marvel.jpg" alt="Alif Marvel" draggable="false">
-      <h3>Alif Marvel</h3>
-      <p></p>
-    </div>
-    <div class="member-card" onclick="showProfile('icad')">
-      <img src="icad.jpg" alt="Icad Ibrahim" draggable="false">
-      <h3>Icad Ibrahim</h3>
-      <p>Kapten</p>
-    </div>
-    <div class="member-card" onclick="showProfile('rofi')">
-      <img src="rofi.jpg" alt="Rofi Rijal" draggable="false">
-      <h3>Rofi Rijal Shani</h3>
-      <p></p>
-    </div>
-    <div class="member-card" onclick="showProfile('fakhri')">
-      <img src="hiba.jpg" alt="Fakhri Hibatulah" draggable="false">
-      <h3>Fakhri Hibatulah</h3>
-      <p></p>
-    </div>
-  </section>
-
-  <section class="profile-container" id="profile">
-    <div class="profile-card" id="alif">
-      <h2>Alif Marvel</h2>
-      <p>Hobi nonton film, ngoding, dan ngemil ramen 🍜</p>
-    </div>
-    <div class="profile-card" id="icad">
-      <h2>Icad Ibrahim</h2>
-      <p></p>
-    </div>
-    <div class="profile-card" id="rofi">
-      <h2>Rofi Rijal Shani</h2>
-      <p></p>
-    </div>
-    <div class="profile-card" id="fakhri">
-      <h2>Fakhri Hibatulah</h2>
-      <p></p>
+  <section class="container">
+    <div class="cardd">
+      <div class="card" onclick="showProfile('Alif Marvel Al-Fathir')">
+        <img src="marvel.jpg" alt="Marvel" draggable="false"/>
+        <h3>Alif Marvel</h3>
+        <p>🖥️ Develop</p>
+      </div>
+      <div class="card" onclick="showProfile('Risyad Ibrahim Pamungkas')">
+        <img src="icad.jpg" alt="Icad" draggable="false"/>
+        <h3>Icad Ibrahim</h3>
+        <p>🛠️ Project Manager</p>
+      </div>
+      <div class="card" onclick="showProfile('Fakhri Hibatullah')">
+        <img src="hiba.jpg" alt="Cilok" draggable="false"/>
+        <h3>Fakhri  Hibatulah</h3>
+        <p>🎨UI/UX Designer</p>
+      </div>
+      <div class="card" onclick="showProfile('Rofi Rijal sani')">
+        <img src="rofi.jpg" alt="Rofi" draggable="false"/>
+        <h3>Rofi Rijalsani</h3>
+        <p>🖥️ Develop</p>
+      </div>
     </div>
   </section>
 
-  <footer>
-    <div class="container">
-      <p>© 2025 Motor Brotherhood | Alif Marvel & Team</p>
-    </div>
-  </footer>
-
-  <script>
-    function showProfile(id) {
-      const cards = document.querySelectorAll('.profile-card');
-      cards.forEach(card => card.style.display = 'none');
-      document.getElementById(id).style.display = 'block';
-      document.getElementById('profile').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    // Prevent Screenshot and Save As
-    document.addEventListener("keydown", function(e) {
-      // Mencegah PrintScreen
-      if (e.key === "PrintScreen") {
-        e.preventDefault(); // Cegah screenshot
-        alert("Hayo mau ngapain Screenshot Segala, kgk boleh!");
-      }
-
-      // Mencegah Ctrl + S
-      if (e.ctrlKey && e.key === "s") {
-        e.preventDefault(); // Cegah save as
-        alert("Gak boleh Save As, bro!");
-      }
-    });
-    document.addEventListener('contextmenu', function(e) {
-      if (e.target.tagName === 'IMG') {
-        e.preventDefault(); // Disable klik kanan
-        alert('Gambar ini tidak bisa di-download!');
-      }
-    });
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
-
-<!-- ===== style.css ===== -->

@@ -1,104 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #121212;
-      color: #f0f0f0;
-    }
-
-    .form-container {
-      max-width: 400px;
-      margin: 40px auto;
-      background: #1e1e1e;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px #ff3c00;
-      border: 1px solid #ff6f00;
-    }
-
-    .form-container h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #ff3c00;
-    }
-
-    input[type="text"], input[type="password"], input[type="email"] {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 5px;
-      background: #2a2a2a;
-      color: white;
-    }
-
-    button {
-      width: 100%;
-      padding: 10px;
-      background: #ff3c00;
-      border: none;
-      border-radius: 5px;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background: #e63300;
-    }
-
-    footer {
-      background-color: #1a1a1a;
-      text-align: center;
-      padding: 10px;
-      font-size: 0.9em;
-      margin-top: 30px;
-    }
-  </style>
 </head>
 <body>
   <header>
-    <div class="container">
+    <div class="asep">
       <h1>🏍️ Motor Brotherhood</h1>
-      <div class="menu-toggle" id="menuToggle">☰</div>
-      <nav id="navbar">
-        <a href="index.html">Home</a>
-        <a href="members.html">Anggota</a>
-        <a href="login.html">Login</a>
-        <a href="register.html">Register</a>
-        <a href="profile.html">Profil</a>
+      <nav>
+        <button id="menu" class="menu" style="color: white;">☰</button>
+        <nav id="navbar" class="navbar">
+          <ul>
+            <a href="index.html">Home</a>
+            <a href="anggota.html">Anggota</a>
+            <a href="profil.html">Profil</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+          </ul>
+        </nav>
       </nav>
     </div>
   </header>
 
-  <div class="form-container">
+  <section class="form-card fade-in">
     <h2>Login</h2>
-    <form action="#">
-      <input type="text" placeholder="Username" required>
-      <input type="password" placeholder="Password" required>
-      <button type="submit">Login</button>
-    </form>
-    <p style="text-align: center; color: white; margin-top: 15px;">Don't have an account? <a href="register.html" style="color: #ff3c00;">Register</a></p>
-  </div>
+    <input type="text" placeholder="Username" />
+    <input type="password" placeholder="Password" />
+    <button class="submit" id="submit">Masuk</button>
+  </section>
 
-  <footer>
-    <p>© 2025 All Rights Reserved</p>
-  </footer>
   <script>
-    const menuToggle = document.getElementById("menuToggle");
-    const navbar = document.getElementById("navbar");
-
-    menuToggle.addEventListener("click", () => {
-      navbar.classList.toggle("show");
+    // Saat tombol "Masuk" ditekan
+    document.getElementById("submit").addEventListener("click", function () {
+      alert("Login berhasil! Selamat datang.");
+      window.location.href = "index.html"; // Ganti ke halaman home lo
     });
   </script>
+  <script src="script.js"></script>
 </body>
 </html>
