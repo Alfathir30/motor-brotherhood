@@ -316,4 +316,14 @@ nav,
 #profilBox p {
   margin: 10px 0;
 }
+
+.form-cardd button {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  background: #e91e63;
+  color: #fff;
+  font-weight: bold;
+}
 /* ======= SELESAI ANGGOTA.HTML ======= */
