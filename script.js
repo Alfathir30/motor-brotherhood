@@ -58,20 +58,24 @@ window.addEventListener('DOMContentLoaded', () => {
     backButton.onclick = function() {
       window.location.href = 'members.html';  // Redirect ke members.html
     };
-    
+
     // Tambahkan tombol ke dalam box profil
     box.appendChild(backButton);
   } else {
-    box.innerHTML = "<p>Profil tidak ditemukan.</p>";
+    box.innerHTML = "<p>Profil tidak ditemukan, </p>";
+    const link = document.createElement('a');
+    link.href = "/member"; // Ganti dengan URL halaman member yang sesuai
+    link.textContent = "Lihat profil member, silahkan pergi ke member dan pilih salah satu.";
+    box.appendChild(link);
+  }
+
+  // Toggle Navbar untuk responsive menu
+  const menu = document.getElementById('menu');
+  const navbar = document.getElementById('navbar');
+
+  if (menu && navbar) {
+    menu.addEventListener('click', () => {
+      navbar.classList.toggle('show');
+    });
   }
 });
-
-// Toggle Navbar untuk responsive menu
-const menu = document.getElementById('menu');
-const navbar = document.getElementById('navbar');
-
-if (menu && navbar) {
-  menu.addEventListener('click', () => {
-    navbar.classList.toggle('show');
-  });
-}
