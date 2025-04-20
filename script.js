@@ -64,7 +64,7 @@ window.addEventListener('DOMContentLoaded', () => {
   } else {
     box.innerHTML = "<p>Profil tidak ditemukan, </p>";
     const link = document.createElement('a');
-    link.href = "/member"; // Ganti dengan URL halaman member yang sesuai
+    link.href = "members.html"; // Ganti dengan URL halaman member yang sesuai
     link.textContent = "Lihat profil member, silahkan pergi ke member dan pilih salah satu.";
     box.appendChild(link);
   }
