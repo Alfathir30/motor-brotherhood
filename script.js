@@ -53,6 +53,7 @@ window.addEventListener('DOMContentLoaded', () => {
         <p><strong>Hobi:</strong> ${data.hobi}</p>
       `;
 
+<<<<<<< HEAD
       // Tombol kembali
       const backButton = document.createElement('button');
       backButton.textContent = "Kembali ke Daftar Member";
@@ -67,6 +68,23 @@ window.addEventListener('DOMContentLoaded', () => {
         <a href="members.html">daftar member</a>
       `;
     }
+=======
+    // Buat tombol "Kembali" untuk kembali ke members.html
+    const backButton = document.createElement('button');
+    backButton.textContent = "Kembali";
+    backButton.onclick = function() {
+      window.location.href = 'members.html';  // Redirect ke members.html
+    };
+
+    // Tambahkan tombol ke dalam box profil
+    box.appendChild(backButton);
+  } else {
+    box.innerHTML = "<p>Profil tidak ditemukan, </p>";
+    const link = document.createElement('a');
+    link.href = "members.html"; // Ganti dengan URL halaman member yang sesuai
+    link.textContent = "Lihat profil member, silahkan pergi ke member dan pilih salah satu.";
+    box.appendChild(link);
+>>>>>>> origin/main
   }
 
   // Toggle Navbar
