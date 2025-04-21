@@ -41,7 +41,7 @@ footer {
 
 .hero {
   background: url('foto/motor2.jpg') no-repeat center center/cover;
-  height: 80vh;
+  height: 65vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -402,4 +402,5 @@ footer {
   background: #111;
   color: white;
 }
+
 /**/
