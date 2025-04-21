@@ -73,13 +73,21 @@ window.addEventListener('DOMContentLoaded', () => {
   const menu = document.getElementById('menu');
   const navbar = document.getElementById('navbar');
   if (menu && navbar) {
-    menu.addEventListener('click', () => {
+    menu.addEventListener('click', (e) => {
       navbar.classList.toggle('show');
+      e.stopPropagation();  // Menghindari event klik menu menutup navbar
+    });
+
+    // Menutup navbar jika klik di luar menu
+    document.addEventListener('click', (e) => {
+      if (!navbar.contains(e.target) && !menu.contains(e.target)) {
+        navbar.classList.remove('show');
+      }
     });
   }
 });
 
-//motor
+// motor
 function filterMotor(type, btn) {
   // Ganti warna tombol aktif
   const buttons = document.querySelectorAll('.filter-btn');
