@@ -1,1 +1,1 @@
-pusing
+tidu
