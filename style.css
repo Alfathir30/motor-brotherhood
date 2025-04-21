@@ -40,7 +40,7 @@ footer {
 }
 
 .hero {
-  background: url('motor2.jpg') no-repeat center center/cover;
+  background: url('foto/motor2.jpg') no-repeat center center/cover;
   height: 80vh;
   display: flex;
   align-items: center;
@@ -215,7 +215,7 @@ footer {
   }
 }
 
-/* Animation */
+/* Animasi */
 .fade-in .btn {
   animation: fadeIn 1s ease-in-out;
 }
@@ -251,7 +251,7 @@ nav,
   animation: fadeIn 1s ease-in-out;
 }
 
-/* ======= BAGIAN TAMBAHAN UNTUK ANGGOTA.HTML ======= */
+/* ======= MEMBERS.HTML ======= */
 .container {
   padding: 2rem;
   display: flex;
@@ -296,7 +296,7 @@ nav,
   font-size: 0.9rem;
   color: #aaa;
 }
-
+/*==PROFILE.HTML==*/
 #profilBox {
   background: #1e1e1e;
   padding: 20px;
@@ -326,4 +326,80 @@ nav,
   color: #fff;
   font-weight: bold;
 }
-/* ======= SELESAI ANGGOTA.HTML ======= */
+
+/*index.html bagian motor*/
+.filter {
+  margin: 20px;
+  text-align: center;
+}
+
+.filter button {
+  position: relative;
+  margin: 5px;
+  padding: 12px 24px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 0;
+  transition: 0.3s;
+}
+
+.filter button.active {
+  background: #03dac6;
+  color: black;
+  font-weight: bold;
+}
+
+.filter button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(90deg, rgba(0, 255, 255, 0.6), rgba(255, 0, 255, 0.6));
+  z-index: 1;
+  pointer-events: none;
+  clip-path: path("M0,0 Q25,15 50,0 T100,0 T150,0 T200,0 L200,20 L0,20 Z");
+  display: block;
+}
+
+.filter button.active::after {
+  display: none;
+}
+
+.list-motor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.motor-card {
+  background: #1e1e1e;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.motor-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: white;
+}
+/**/

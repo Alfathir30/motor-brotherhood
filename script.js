@@ -78,3 +78,40 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+//motor
+function filterMotor(type, btn) {
+  // Ganti warna tombol aktif
+  const buttons = document.querySelectorAll('.filter-btn');
+  buttons.forEach(button => button.classList.remove('active'));
+  btn.classList.add('active');
+
+  // Tampilkan motor yang sesuai
+  const cards = document.querySelectorAll('.motor-card');
+  cards.forEach(card => {
+    if (type === 'all') {
+      card.style.display = 'block';
+    } else {
+      card.style.display = card.classList.contains(type) ? 'block' : 'none';
+    }
+  });
+}
+
+//tampilan motor
+
+function filterMotor(filter, btn) {
+  const buttons = document.querySelectorAll('.filter-btn');
+  const motorCards = document.querySelectorAll('.motor-card');
+  
+  // Set active class
+  buttons.forEach(button => button.classList.remove('active'));
+  btn.classList.add('active');
+
+  motorCards.forEach(card => {
+    if (filter === 'all' || card.classList.contains(filter)) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
