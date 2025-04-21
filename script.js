@@ -63,7 +63,7 @@ window.addEventListener('DOMContentLoaded', () => {
       box.appendChild(backButton);
     } else {
       box.innerHTML = `
-        <p>Profil tidak ditemukan. Klik salah satu member untuk melihat profil di </p>
+        <p>Profil tidak ditemukan. klik salah satu member untuk melihat profil di </p>
         <a href="members.html">daftar member</a>
       `;
     }
@@ -72,38 +72,27 @@ window.addEventListener('DOMContentLoaded', () => {
   // Toggle Navbar
   const menu = document.getElementById('menu');
   const navbar = document.getElementById('navbar');
-  const body = document.body;
-
   if (menu && navbar) {
-    // Toggle navbar saat klik menu
-    menu.addEventListener('click', (e) => {
+    menu.addEventListener('click', () => {
       navbar.classList.toggle('show');
-      e.stopPropagation(); // Mencegah klik menu menutup navbar
-    });
-
-    // Menutup navbar saat klik di luar navbar atau menu
-    body.addEventListener('click', (e) => {
-      if (!navbar.contains(e.target) && !menu.contains(e.target)) {
-        navbar.classList.remove('show');
-      }
-    });
-  }
-
-  // filter motor
-  function filterMotor(filter, btn) {
-    const buttons = document.querySelectorAll('.filter-btn');
-    const motorCards = document.querySelectorAll('.motor-card');
-  
-    // Set active class
-    buttons.forEach(button => button.classList.remove('active'));
-    btn.classList.add('active');
-
-    motorCards.forEach(card => {
-      if (filter === 'all' || card.classList.contains(filter)) {
-        card.style.display = 'block';
-      } else {
-        card.style.display = 'none';
-      }
     });
   }
 });
+
+//motor
+function filterMotor(type, btn) {
+  // Ganti warna tombol aktif
+  const buttons = document.querySelectorAll('.filter-btn');
+  buttons.forEach(button => button.classList.remove('active'));
+  btn.classList.add('active');
+
+  // Tampilkan motor yang sesuai
+  const cards = document.querySelectorAll('.motor-card');
+  cards.forEach(card => {
+    if (type === 'all') {
+      card.style.display = 'block';
+    } else {
+      card.style.display = card.classList.contains(type) ? 'block' : 'none';
+    }
+  });
+}
