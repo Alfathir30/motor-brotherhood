@@ -15,7 +15,6 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  background: linear-gradient(90deg, #6200ff, #bf00ff);
   padding: 20px 0;
   flex-wrap: wrap;
 }
@@ -167,45 +166,61 @@ footer {
   justify-content: center;
 }
 
-/* Navbar Default */
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  padding: 0;
+
+/* Tampilan di Desktop */
+@media (min-width: 769px) {
+  body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #111;
+  }
+  .menu {
+    display: none; 
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    margin-left: 10cm;
+  }
+
+  .navbar ul a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
 }
 
-.navbar ul a {
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-  font-weight: bold;
-}
 
-/* Tombol hamburger (sembunyi dulu di PC) */
-.menu {
-  display: none;
-  font-size: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-/* Responsive Navbar */
+/* 📱 Tampilan pas di HP */
 @media (max-width: 768px) {
   .menu {
     display: block;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    margin-top: 10px;
   }
 
   .navbar {
     display: none;
     flex-direction: column;
+    align-items: center;
     background: linear-gradient(90deg, #6200ff, #bf00ff);
-    position: absolute;
-    top: 60px;
-    left: 0;
     width: 100%;
     padding: 1rem;
-    z-index: 99;
+    margin-top: 10px;
   }
 
   .navbar.show {
@@ -213,17 +228,21 @@ footer {
   }
 
   .navbar ul {
+    list-style: none;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navbar ul a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
   }
 }
 
-@media (max-width: 600px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
-}
 
 /* Animasi */
 .fade-in .btn {
